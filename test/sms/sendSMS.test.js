@@ -21,8 +21,10 @@ describe('Test sendSMS method', () => {
 
     const termii = new Termii(api_key, senderId);
 
+    const recipients = ['2347065026902', '2347087675643'];
+
     const data = {
-        to: '2347065526106',
+        to: recipients,
         from: 'Prince Sly',
         sms: 'Hello this is a message',
         type: 'plain',
@@ -32,10 +34,10 @@ describe('Test sendSMS method', () => {
 
     it('should return object containing the payload', () => {
         const options = { channel: 'dnd' };
-        
+
         termii.setSMSOptions(options);
 
-        const sms = termii.sendSMS('2347065526106', 'Hello this is a message');
+        const sms = termii.sendSMS(recipients, 'Hello this is a message');
 
         expect(sms).toEqual(data);
     });
@@ -44,6 +46,12 @@ describe('Test sendSMS method', () => {
         const options = { channel: 'invalid' };
         expect(() => {
             termii.sendSMS('2347065526106', 'Hello this is a message', options);
+        }).toThrowError();
+    });
+
+    it('Should throw an error if recipients are not string or array of numbers', () => {
+        expect(() => {
+            termii.sendSMS(2347065526106, 'Hello this is a message');
         }).toThrowError();
     });
 });

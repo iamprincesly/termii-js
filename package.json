@@ -1,5 +1,5 @@
 {
-    "name": "termii-js-sdk",
+    "name": "termii-js",
     "version": "0.0.1",
     "description": "A simple JS SDK for made for Termii API",
     "main": "index.js",
@@ -8,7 +8,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/iamprincesly/termii-js-sdk.git"
+        "url": "git+https://github.com/iamprincesly/termii-js.git"
     },
     "keywords": [
         "Termii",
@@ -19,9 +19,9 @@
     "author": "Sylvanus Etim <iamprincesly@gmail.com> (https://github.com/iamprincesly/)",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/iamprincesly/termii-js-sdk/issues"
+        "url": "https://github.com/iamprincesly/termii-js/issues"
     },
-    "homepage": "https://github.com/iamprincesly/termii-js-sdk#readme",
+    "homepage": "https://github.com/iamprincesly/termii-js#readme",
     "dependencies": {
         "-": "^0.0.1",
         "axios": "^0.25.0",

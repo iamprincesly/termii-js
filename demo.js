@@ -10,14 +10,48 @@
  * file that was distributed with this source code.
  * ----------------------------------------------------------------
  */
-
 const Termii = require('./lib/Termii');
-
 const api_key = '{apikeyhere}';
 const options = { channel: 'generic' };
 
-// Send SMS 
-const termii = new Termii(api_key);
+const termii = new Termii();
 termii.setSMSOptions(options);
 const recipients = ['2347065026902', '2347087675643'];
-termii.sendSMS(recipients, 'Hello this is a message');
+
+// Send SMS
+termii
+    .sendSMS(recipients, 'this is a test message')
+    .then((response) => {
+        if (response.data.code === 'ok') {
+            console.log('Wow it work');
+        }
+        console.log(response);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+
+// Send Bulk SMS
+termii
+    .sendBulkSMS(recipients, 'this is a test message')
+    .then((response) => {
+        if (response.data.code === 'ok') {
+            console.log('Wow it work');
+        }
+        console.log(response);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+
+// Send with auto-generated number
+termii
+    .sendSMSWithAutomatedNumber(recipients, 'this is a test message')
+    .then((response) => {
+        if (response.data.code === 'ok') {
+            console.log('Wow it work');
+        }
+    })
+    .catch((err) => {
+        console.log(err);
+    });

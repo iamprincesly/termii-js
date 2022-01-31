@@ -35,14 +35,14 @@ const sms = await termii.sendSMS('2347063516197', 'Hello this is a message');
 // Set SMS options
 const options = { channel: 'generic' };
 const sms = await termii.sendSMS(
-    '2347065526106',
+    '2347065548126',
     'Hello this is a message',
     options
 );
 
 // Optionally you can set SMS option first before calling the sendSMS method
 termii.setSMSOptions(options);
-const sms = await termii.sendSMS('2347065526106', 'Hello this is a message');
+const sms = await termii.sendSMS('2347065940103', 'Hello this is a message');
 
 // You can as well send to many numbers by passing array of numbers as strings
 const recipients = ['2347065026902', '2347087675643'];
@@ -56,7 +56,7 @@ You can chain ```then()``` and ```catch()``` method like below
 ```javascript
 termii.sendSMS(recipients, 'this is a test message')
     .then((response) => {
-        if (response.data.code === 'ok') {
+        if (response.code === 'ok') {
             // Do something interesting
         }
         console.log(response);
@@ -92,6 +92,9 @@ const termii = new Termii('api_key', 'sender_id');
 
 termii.sendSMSWithAutomatedNumber(recipients, 'this is a test message')
     .then((response) => {
+        if (response.code === 'ok') {
+            // Do something interesting
+        }
         console.log(response);
     })
     .catch((err) => {

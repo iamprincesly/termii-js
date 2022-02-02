@@ -25,7 +25,7 @@ $ npm install termii-js
 -   Send SMS
 
 ```javascript
-const Termii = require('termii');
+const Termii = require('termii-js');
 
 const termii = new Termii('api_key', 'sender_id');
 
@@ -86,7 +86,7 @@ app.get('/api/sendsms', async (req, res, next) => {
 You can send SMS with Termii auto-generated phone number as well. The ```sendSMSWithAutomatedNumber()``` method accept only two arguments. First arguments ```'recipients' [string || Array]``` and ```'message' [string]```. 
 
 ```javascript
-const Termii = require('termii');
+const Termii = require('termii-js');
 
 const termii = new Termii('api_key', 'sender_id');
 
@@ -106,7 +106,7 @@ You can specify the API key and the sender ID in the environment variable ```'TE
 
 NOTE: If you don't specify sender ID in the environment variable ```'TERMII_SENDER_ID'``` you will have to pass it to the constructor as second argument else "Termii" will be used as a default sender ID. API key is made mandatory, you specify it in the environment variable ```'TERMII_API_KEY'``` or pass to the constructor
 ```javascript
-const Termii = require('termii');
+const Termii = require('termii-js');
 
 // Create instance without constructor arguments
 // NOTE: You need specify this arguments in environment

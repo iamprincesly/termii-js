@@ -16,30 +16,22 @@ const Termii = require('../../lib/Termii');
  * test the sendSMS method to be sure it return the needed data
  */
 describe('Test sendSMS method', () => {
-    const api_key = 'somesrtinghere';
-    const senderId = 'Prince Sly';
+    const api_key =
+        'TL0uKmj5R8Talloc2XWDAHbz5FNpWrnkRs93KlIH7lLN6whbO7MwruyOf8RUws';
+    const senderId = 'jhsdvjhsc';
 
     const termii = new Termii(api_key, senderId);
 
     const recipients = ['2347065026902', '2347087675643'];
 
-    const data = {
-        to: recipients,
-        from: 'Prince Sly',
-        sms: 'Hello this is a message',
-        type: 'plain',
-        channel: 'dnd',
-        api_key: 'somesrtinghere',
-    };
-
-    it('should return object containing the payload', () => {
-        const options = { channel: 'dnd' };
+    it("should return object 200 status code and 'ok' code", async () => {
+        const options = { channel: 'generic' };
 
         termii.setSMSOptions(options);
 
-        const sms = termii.sendSMS(recipients, 'Hello this is a message');
+        const sms = await termii.sendSMS(recipients, 'Hello this is a message');
 
-        expect(sms).toEqual(data);
+        expect(sms.code).toBe('ok');
     });
 
     it('it should throw an error for invalid channel', () => {

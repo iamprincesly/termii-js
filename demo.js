@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  * ----------------------------------------------------------------
  */
-const Termii = require('./lib/Termii');
+const Termii = require('termii-js');
 const api_key = '{api key}';
 const options = { channel: 'generic' };
 const senderID = 'My sender ID'

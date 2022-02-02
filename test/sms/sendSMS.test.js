@@ -16,9 +16,11 @@ const Termii = require('../../lib/Termii');
  * test the sendSMS method to be sure it return the needed data
  */
 describe('Test sendSMS method', () => {
-    const api_key =
-        'TL0uKmj5R8Talloc2XWDAHbz5FNpWrnkRs93KlIH7lLN6whbO7MwruyOf8RUws';
-    const senderId = 'jhsdvjhsc';
+    // Put the valid api key for the test to be successful
+    const api_key = 'api_key_here';
+
+    // Put a valid sender ID for the test to be successful
+    const senderId = 'my sender ID here';
 
     const termii = new Termii(api_key, senderId);
 
